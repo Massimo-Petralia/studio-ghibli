@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'LeckerliOne';
+    src: url('font/leckerlione-regular-webfont.svg') format('svg');
+    src: url('font/leckerlione-regular-webfont.eot');
+    src: url('font/leckerlione-regular-webfont.woff') format('woff');
+    src: url('font/leckerlione-regular-webfont.ttf') format('truetype');
+}
+
+#container{
+    display: grid;
+    grid-template-areas:  'header header'
+                          'navigation content'
+                          'footer footer';
+}
+
+body{
+    width: 1000px;
+    border: 1px solid black;
+    margin: 0px auto;
+    padding: 20px 20px;
+}
+
+#header{
+    grid-area: header;
+    background: tomato;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px 5px 0px 0px;
+}
+#logo{
+    font-family: 'LeckerliOne';
+    font-weight: lighter;
+    margin: 0px;
+    padding-left: 10px;
+    
+}
+
+#tasto-home{
+    font-size: 20px;;
+    padding-top: 6px;
+    padding-right: 6px;
+    color: white;
+}
+
+#navigation{
+    grid-area: navigation;
+    background: mediumaquamarine;
+    width: 300px;
+    margin-right: 20px;
+    box-shadow: 3px 0px 7px  darkgray;
+}
+    
+
+#menù_item{
+    font-style: italic;
+    margin: 2px;
+}
+
+.item-menù{
+    cursor: pointer;
+    font-family:    sans-serif
+}
+
+#content{
+    grid-area: content;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.firma{
+    padding-right: 6px;
+    text-align: right;
+    color: white
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0.0;
+        left: 30px;
+    }
+    to {
+    opacity: 1.0;
+    left:  0px;
+    }
+    }
+    
+    .leftOpacity{
+        opacity: 0.0;
+        left: 30px;
+    }
+    .animate{
+        animation: pulse 500ms;
+        
+    }
+   
+
+.titleStory{
+    position: relative;
+    font-family: arial;
+}
+
+.textStory{
+    position: relative;
+    text-align: justify;
+    font-family: sans-serif;
+}
+
+.img{
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+#footer{
+    grid-area: footer;
+    background: tomato;
+    border-radius: 0px 0px 5px 5px;
+}
