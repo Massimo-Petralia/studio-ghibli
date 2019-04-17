@@ -65,7 +65,7 @@ function myFunction() {
         logo.innerHTML = 'Studio Ghibli';
         home = document.createElement('a');
         home.setAttribute('id', 'tasto-home');
-        home.setAttribute('onclick', 'buildAll(0)');
+        home.setAttribute('onclick', 'buildAll(0); removeclassOnGoHome()');
         home.setAttribute('href', 'javascript:void(0)');
         home.innerHTML = 'Home';
         header.appendChild(logo);
@@ -160,7 +160,7 @@ function buildImg(i) {
         oldImg = document.getElementsByClassName('img')[0];
         content.appendChild(img);
     }
-   
+
 }
 
 function buildAll(i) {
@@ -176,40 +176,36 @@ function myAnimate(_className) {
 }
 
 function getFirstElemetnsByClassName(classes) {
-    var newArray = classes.map((classElement) => { return document.getElementsByClassName(classElement)[0]}) 
-   return newArray;
+    var newArray = classes.map((classElement) => { return document.getElementsByClassName(classElement)[0] })
+    return newArray;
 }
 
-var callback = function(event) {
+var callback = function (event) {
     var title = document.getElementsByClassName('titleStory')[0].innerHTML;
-    if(event.currentTarget.innerHTML === title) {
+    if (event.currentTarget.innerHTML === title) {
         event.currentTarget.classList.add('active');
-        console.log(event.currentTarget.innerHTML, title);
-    } 
-   
+    }
 }
 
-function selectItem(){
+function selectItem() {
     var title = document.getElementsByClassName('titleStory')[0].innerHTML;
-
-    var li =  document.getElementsByTagName('li');
+    var li = document.getElementsByTagName('li');
     var liArray = Array.from(li)
-        liArray.forEach(element => {
-            element.addEventListener('click', callback(event))
-            if(element.innerHTML !== title) {
-                element.classList.remove('active');
-
-            }
-        });
-    
-        
-  
- 
-  
-
+    liArray.forEach(element => {
+        element.addEventListener('click', callback(event))
+        if (element.innerHTML !== title) {
+            element.classList.remove('active');
+        }
+    });
 }
 
-
+function removeclassOnGoHome() {
+    var li = document.getElementsByTagName('li');
+    var liArray = Array.from(li)
+    liArray.forEach(element => {
+        element.classList.remove('active');
+    });
+}
 
 
 
