@@ -100,7 +100,7 @@ function buildTitles(title, i, varMenù) {
     item_menù = document.createElement('li');
     item_menù.setAttribute('class', 'item-menù');
 
-    item_menù.setAttribute('onclick', 'buildAll(' + i + ')');
+    item_menù.setAttribute('onclick', 'buildAll(' + i + '); selectItem()');
     item_menù.innerHTML = title;
     varMenù.appendChild(item_menù);
 }
@@ -160,6 +160,7 @@ function buildImg(i) {
         oldImg = document.getElementsByClassName('img')[0];
         content.appendChild(img);
     }
+   
 }
 
 function buildAll(i) {
@@ -179,9 +180,34 @@ function getFirstElemetnsByClassName(classes) {
    return newArray;
 }
 
+var callback = function(event) {
+    var title = document.getElementsByClassName('titleStory')[0].innerHTML;
+    if(event.currentTarget.innerHTML === title) {
+        event.currentTarget.classList.add('active');
+        console.log(event.currentTarget.innerHTML, title);
+    } 
+   
+}
 
+function selectItem(){
+    var title = document.getElementsByClassName('titleStory')[0].innerHTML;
 
+    var li =  document.getElementsByTagName('li');
+    var liArray = Array.from(li)
+        liArray.forEach(element => {
+            element.addEventListener('click', callback(event))
+            if(element.innerHTML !== title) {
+                element.classList.remove('active');
 
+            }
+        });
+    
+        
+  
+ 
+  
+
+}
 
 
 

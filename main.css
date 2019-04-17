@@ -22,7 +22,7 @@ body{
 
 #header{
     grid-area: header;
-    background: tomato;
+    background: rgb(98, 202, 236);
     display: flex;
     justify-content: space-between;
     border-radius: 5px 5px 0px 0px;
@@ -44,21 +44,34 @@ body{
 
 #navigation{
     grid-area: navigation;
-    background: mediumaquamarine;
+    background: gray;
     width: 300px;
     margin-right: 20px;
     box-shadow: 3px 0px 7px  darkgray;
 }
-    
+    ul{
+        padding-left: 0px;
+    }
 
-#menù_item{
-    font-style: italic;
-    margin: 2px;
+.active{
+    background: rgb(98, 202, 236) !important;
 }
 
 .item-menù{
     cursor: pointer;
-    font-family:    sans-serif
+    font-family:    sans-serif;
+    list-style-type: none;
+    font-size: 1.3em;
+    padding: 5px;
+    color: white;
+
+}
+.item-menù:hover{
+    background: rgb(98, 202, 236);
+}
+
+li:nth-child(odd){
+    background: rgb(177, 177, 177);
 }
 
 #content{
@@ -111,10 +124,11 @@ body{
     width: 100%;
     border-radius: 10px;
     position: relative;
+    border: 2px solid rgb(98, 202, 236);
 }
 
 #footer{
     grid-area: footer;
-    background: tomato;
+    background: rgb(98, 202, 236);
     border-radius: 0px 0px 5px 5px;
 }
